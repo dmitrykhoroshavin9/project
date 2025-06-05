@@ -1,0 +1,90 @@
+/* Header */
+.header {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.header__logo {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.header__logo:hover {
+    color: var(--color-accent);
+}
+
+/* Navigation (Nav) */
+.nav__list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav__link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    font-size: 1.15em;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-accent);
+    transition: all 0.3s ease-out;
+    transform: translateX(-50%);
+}
+
+.nav__link:hover {
+    color: var(--color-text-light);
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+    width: 100%;
+}
+
+.nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 101;
+    position: relative;
+}
+
+.nav__toggle-line {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-text-light);
+    margin: 6px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}

@@ -1,0 +1,47 @@
+/* Impact Section */
+.impact {
+    background: linear-gradient(to bottom, var(--color-background-light), #F0F0E8);
+}
+
+.impact__content {
+    background-color: var(--color-text-light);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+    max-width: 950px;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.impact__text {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: var(--color-text-dark);
+}
+
+.impact__list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.impact__list-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 15px;
+    font-size: 1.15em;
+    color: var(--color-text-dark);
+    font-weight: 400;
+}
+
+.impact__list-item::before {
+    content: '\272F';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 1.6em;
+    line-height: 1;
+    top: 0px;
+    transform: rotate(-10deg);
+}

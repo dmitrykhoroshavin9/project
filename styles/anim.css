@@ -1,0 +1,117 @@
+/*
+ * @file styles/anim.css
+ * @description Пользовательские CSS-анимации появления (entrance animations).
+ *              Используется только нативный CSS, без сторонних библиотек.
+ */
+
+/* ===============================================
+   Базовые классы для анимаций
+   =============================================== */
+
+/* Класс, который применяется ко всем элементам, которые должны анимироваться */
+.anim {
+    opacity: 0;
+    /* Важно: не устанавливать transition здесь, чтобы не конфликтовать с animation */
+}
+
+/* Класс, который добавляется JavaScript'ом, когда элемент должен начать анимацию */
+.anim--start {
+    opacity: 1; /* Обеспечивает, что элемент будет виден в конце анимации */
+    animation-delay: var(--anim-delay, 0s); /* Задержка будет установлена JS */
+    animation-fill-mode: forwards; /* Сохраняет конечное состояние анимации */
+}
+
+
+/* ===============================================
+   Определения ключевых кадров (keyframes) для анимаций
+   Более плавные и выразительные эффекты
+   =============================================== */
+
+/* Анимация: Fade In (простое, медленное появление) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Анимация: Slide In Up (появление снизу вверх с легким "подскоком" и глубиной) */
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(70px) perspective(400px) rotateX(-15deg); }
+    to { opacity: 1; transform: translateY(0) perspective(400px) rotateX(0deg); }
+}
+
+/* Анимация: Slide In Left (появление слева направо с легким "заворотом" и глубиной) */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-70px) perspective(400px) rotateY(15deg); }
+    to { opacity: 1; transform: translateX(0) perspective(400px) rotateY(0deg); }
+}
+
+/* Анимация: Slide In Right (появление справа налево с легким "заворотом" и глубиной) */
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(70px) perspective(400px) rotateY(-15deg); }
+    to { opacity: 1; transform: translateX(0) perspective(400px) rotateY(0deg); }
+}
+
+/* Анимация: Zoom In (увеличение из центра с эффектом "пружины" и легкого подъема) */
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.7) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Анимация: Fade In Up Big (более выраженное и плавное появление снизу вверх) */
+@keyframes fadeInUpBig {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===============================================
+   Применение анимаций к элементам с модификаторами
+   (используем более изысканные cubic-bezier и durations)
+   =============================================== */
+
+.anim--start.anim--fade-in {
+    animation: fadeIn 1.2s ease-out forwards; /* Более долгая, мягкая анимация */
+}
+
+.anim--start.anim--slide-in-up {
+    /* cubic-bezier(0.25, 0.46, 0.45, 0.94) -> Standard ease-out
+       cubic-bezier(0.2, 0.8, 0.2, 1) -> Более сильный ease-out, чувствуется ускорение
+       cubic-bezier(0.34, 1.56, 0.64, 1) -> Легкий отскок после появления */
+    animation: slideInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.anim--start.anim--slide-in-left {
+    animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.anim--start.anim--slide-in-right {
+    animation: slideInRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.anim--start.anim--zoom-in {
+    /* cubic-bezier(0.175, 0.885, 0.32, 1.275) -> Более выраженный отскок */
+    animation: zoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.anim--start.anim--fade-in-up-big {
+    animation: fadeInUpBig 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* Увеличили длительность и плавность */
+}
+
+/* Установка задержки через CSS переменную, которую будет устанавливать JS */
+.anim--start {
+    /* animation-delay уже определен внутри селектора .anim--start */
+}
+
+/* Классы для стаггеред-эффекта (если нужны конкретные задержки) */
+/* Эти классы можно использовать вручную или динамически добавлять через JS */
+.anim--delay-01 { --anim-delay: 0.1s; }
+.anim--delay-02 { --anim-delay: 0.2s; }
+.anim--delay-03 { --anim-delay: 0.3s; }
+.anim--delay-04 { --anim-delay: 0.4s; }
+.anim--delay-05 { --anim-delay: 0.5s; }
+.anim--delay-06 { --anim-delay: 0.6s; }
+.anim--delay-07 { --anim-delay: 0.7s; }
+.anim--delay-08 { --anim-delay: 0.8s; }
+.anim--delay-09 { --anim-delay: 0.9s; }
+.anim--delay-10 { --anim-delay: 1.0s; }
+/* ... и так далее по необходимости */

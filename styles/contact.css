@@ -1,0 +1,79 @@
+.contact {
+    background: linear-gradient(to bottom, #F0F0E8, var(--color-background-light));
+}
+
+.contact__form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--color-text-light);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.contact__form-group {
+    margin-bottom: 25px;
+}
+
+.contact__form-label {
+    display: block;
+    font-size: 1.1em;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.contact__form-input,
+.contact__form-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1em;
+    color: var(--color-text-dark);
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact__form-input:focus,
+.contact__form-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(204, 51, 51, 0.2);
+}
+
+.contact__form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact__form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-end; /* Кнопки справа */
+    margin-top: 30px;
+}
+
+.contact__form-button {
+    flex-grow: 1; /* Кнопки могут растягиваться */
+    max-width: 250px; /* Ограничиваем ширину кнопок */
+}
+
+.contact__form-button--clear {
+    background: linear-gradient(45deg, #666, #999);
+}
+
+.contact__form-button--clear:hover {
+    background: linear-gradient(45deg, #999, #666);
+}
+
+.contact__form-status {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--color-primary);
+}

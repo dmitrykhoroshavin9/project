@@ -1,0 +1,134 @@
+/* Базовые стили и сброс */
+:root {
+    /* Цвета */
+    --color-primary: #750000;       /* Глубокий, насыщенный красный */
+    --color-accent: #CC3333;        /* Более яркий красный для акцентов */
+    --color-background-light: #FDFCF6; /* Теплый, почти кремовый фон */
+    --color-background-dark: #1F2833; /* Темный, глубокий серый/синий для контраста */
+    --color-text-dark: #333333;     /* Темный текст */
+    --color-text-medium: #666666;   /* Средний серый текст */
+    --color-text-light: #FFFFFF;    /* Белый текст */
+    --color-line: #993333;          /* Цвет линии для хронологии */
+
+    /* Шрифты */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Тени */
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* Общие стили для секций */
+.section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.section__title {
+    font-size: 3.2em;
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.section__title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: var(--color-accent);
+    margin: 28px auto 0;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Стили кнопки */
+.button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
+    color: var(--color-text-light);
+    padding: 16px 32px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    box-shadow: var(--shadow-medium);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease-out;
+    transform: skewX(-20deg);
+}
+
+.button:hover {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.button:hover::before {
+    left: 100%;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эпоха Великих Перемен: Революция 1917 и Гражданская Война</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Ваш кастомный CSS для анимаций -->
+    <link rel="stylesheet" href="styles/anim.css">
+    <!-- Ваш основной кастомный CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Предзагрузчик страницы -->
+    <div class="preloader">
+        <div class="preloader__spinner"></div>
+        <p class="preloader__text">Загрузка истории...</p>
+    </div>
+
+    <header class="header anim anim--fade-in" data-anim-delay="0.1">
+        <div class="header__container">
+            <a href="#" class="header__logo">1917-1922</a>
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#about" class="nav__link">О проекте</a></li>
+                    <li class="nav__item"><a href="#chronology" class="nav__link">Хронология</a></li>
+                    <li class="nav__item"><a href="#figures" class="nav__link">Ключевые фигуры</a></li>
+                    <li class="nav__item"><a href="#impact" class="nav__link">Последствия</a></li>
+                    <li class="nav__item"><a href="#gallery" class="nav__link">Галерея</a></li>
+                    <li class="nav__item"><a href="#recommended-readings" class="nav__link">Что почитать</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Контакты</a></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Открыть меню">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero__overlay"></div>
+            <div class="hero__content anim anim--fade-in-up-big" data-anim-delay="0.3">
+                <h1 class="hero__title">Эпоха Великих Перемен: Революция 1917 и Гражданская Война</h1>
+                <p class="hero__subtitle">Путь от империи к новому миру. События, изменившие ход истории.</p>
+                <a href="#about" class="hero__button button">Узнать больше</a>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="section__container">
+                <h2 class="section__title about__title anim anim--slide-in-up">О Проекте</h2>
+                <div class="about__content">
+                    <div class="about__image-wrapper anim anim--zoom-in" data-anim-delay="0.1">
+                        <img src="images/revol.jpg" alt="Старые книги по истории и архивы" class="about__image">
+                    </div>
+                    <div class="about__text-content">
+                        <p class="about__text anim anim--fade-in-up-big" data-anim-delay="0.2">Этот проект создан с целью предоставления доступной и объективной информации о ключевых событиях Революции 1917 года и Гражданской войны (1918-1922) в России.</p>
+                        <p class="about__text anim anim--fade-in-up-big" data-anim-delay="0.3">Мы стремимся помочь пользователям понять сложности и многогранность этого переломного периода в истории, представляя хронологию, ключевые фигуры, а также долгосрочные последствия этих событий. Наша задача — не только информировать, но и вдохновить на дальнейшее изучение.</p>
+                        <p class="about__text anim anim--fade-in-up-big" data-anim-delay="0.4">Все материалы основаны на открытых источниках и исторических исследованиях, чтобы обеспечить максимальную точность и непредвзятость. Мы верим, что глубокое понимание прошлого помогает лучше осмыслить настоящее и будущее.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chronology" class="section chronology">
+            <div class="section__container">
+                <h2 class="section__title chronology__title anim anim--slide-in-up">Хронология Событий</h2>
+                <div class="chronology__timeline">
+                    <!-- Чередуем анимации slide-in-left и slide-in-right для визуального интереса -->
+                    <div class="chronology__item anim anim--slide-in-left" data-anim-delay="0.1">
+                        <div class="chronology__date">Февраль 1917</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Февральская Революция</h3>
+                            <p class="chronology__event-description">Свержение монархии, отречение Николая II. Образование Временного правительства и Петроградского Совета рабочих и солдатских депутатов.</p>
+                        </div>
+                    </div>
+                    <div class="chronology__item anim anim--slide-in-right" data-anim-delay="0.2">
+                        <div class="chronology__date">Апрель 1917</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Приезд Ленина и Апрельские тезисы</h3>
+                            <p class="chronology__event-description">Возвращение В.И. Ленина в Россию и провозглашение курса на социалистическую революцию.</p>
+                        </div>
+                    </div>
+                    <div class="chronology__item anim anim--slide-in-left" data-anim-delay="0.3">
+                        <div class="chronology__date">Июль 1917</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Июльское восстание</h3>
+                            <p class="chronology__event-description">Попытка большевиков взять власть, подавленная Временным правительством.</p>
+                        </div>
+                    </div>
+                    <div class="chronology__item anim anim--slide-in-right" data-anim-delay="0.4">
+                        <div class="chronology__date">Август 1917</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Корниловский мятеж</h3>
+                            <p class="chronology__event-description">Неудачная попытка генерала Корнилова установить военную диктатуру, приведшая к усилению позиций большевиков.</p>
+                        </div>
+                    </div>
+                    <div class="chronology__item anim anim--slide-in-left" data-anim-delay="0.5">
+                        <div class="chronology__date">25 Октября 1917</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Октябрьская Революция</h3>
+                            <p class="chronology__event-description">Вооруженное восстание в Петрограде, захват власти большевиками. Провозглашение Советской власти.</p>
+                        </div>
+                    </div>
+                    <div class="chronology__item anim anim--slide-in-right" data-anim-delay="0.6">
+                        <div class="chronology__date">Март 1918</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Брестский мир</h3>
+                            <p class="chronology__event-description">Подписание сепаратного мирного договора с Германией, выход Советской России из Первой мировой войны.</p>
+                        </div>
+                    </div>
+                    <div class="chronology__item anim anim--slide-in-left" data-anim-delay="0.7">
+                        <div class="chronology__date">1918-1922</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Гражданская Война</h3>
+                            <p class="chronology__event-description">Кровопролитная война между Красной армией (большевики и их сторонники) и Белым движением (антибольшевистские силы), при поддержке интервентов.</p>
+                        </div>
+                    </div>
+                    <div class="chronology__item anim anim--slide-in-right" data-anim-delay="0.8">
+                        <div class="chronology__date">Декабрь 1922</div>
+                        <div class="chronology__event">
+                            <h3 class="chronology__event-title">Образование СССР</h3>
+                            <p class="chronology__event-description">Официальное создание Союза Советских Социалистических Республик, завершившее формирование нового политического устройства.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="figures" class="section figures">
+            <div class="section__container">
+                <h2 class="section__title figures__title anim anim--slide-in-up">Ключевые Фигуры</h2>
+                <div class="figures__grid">
+                    <!-- Добавляем anim класс к каждой карточке и индивидуальную задержку -->
+                    <article class="figures__card anim anim--zoom-in" data-anim-delay="0.1">
+                        <img src="images/lenin.jpg" alt="Владимир Ленин" class="figures__card-image">
+                        <h3 class="figures__card-name">Владимир Ленин</h3>
+                        <p class="figures__card-description">Лидер большевиков, организатор Октябрьской революции, первый председатель Совета Народных Комиссаров.</p>
+                    </article>
+                    <article class="figures__card anim anim--zoom-in" data-anim-delay="0.2">
+                        <img src="images/trors.jpg" alt="Лев Троцкий" class="figures__card-image">
+                        <h3 class="figures__card-name">Лев Троцкий</h3>
+                        <p class="figures__card-description">Один из организаторов Октябрьской революции, создатель и руководитель Красной Армии.</p>
+                    </article>
+                    <article class="figures__card anim anim--zoom-in" data-anim-delay="0.3">
+                        <img src="images/kolchak.jpg" alt="Александр Колчак" class="figures__card-image">
+                        <h3 class="figures__card-name">Александр Колчак</h3>
+                        <p class="figures__card-description">Верховный правитель России и Верховный Главнокомандующий Русской армией Белого движения.</p>
+                    </article>
+                    <article class="figures__card anim anim--zoom-in" data-anim-delay="0.4">
+                        <img src="images/kerensk.jpg" alt="Александр Керенский" class="figures__card-image">
+                        <h3 class="figures__card-name">Александр Керенский</h3>
+                        <p class="figures__card-description">Глава Временного правительства в 1917 году, один из ключевых деятелей Февральской революции.</p>
+                    </article>
+                     <article class="figures__card anim anim--zoom-in" data-anim-delay="0.5">
+                        <img src="images/nik2.jpg" alt="Николай II" class="figures__card-image">
+                        <h3 class="figures__card-name">Николай II</h3>
+                        <p class="figures__card-description">Последний император Всероссийский. Его отречение от престола положило конец монархии.</p>
+                    </article>
+                    <article class="figures__card anim anim--zoom-in" data-anim-delay="0.6">
+                        <img src="images/stalin.jpg" alt="Иосиф Сталин" class="figures__card-image">
+                        <h3 class="figures__card-name">Иосиф Сталин</h3>
+                        <p class="figures__card-description">Один из видных деятелей большевистской партии, активно участвовавший в революции и гражданской войне.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="section impact">
+            <div class="section__container">
+                <h2 class="section__title impact__title anim anim--slide-in-up">Последствия Революции и Гражданской Войны</h2>
+                <div class="impact__content anim anim--fade-in-up-big" data-anim-delay="0.1">
+                    <p class="impact__text">Революция 1917 года и последующая гражданская война имели колоссальное и многогранное влияние на Россию и весь мир. Они привели к:</p>
+                    <ul class="impact__list">
+                        <li class="impact__list-item">Падению Российской империи и ликвидации монархии.</li>
+                        <li class="impact__list-item">Созданию первого в мире социалистического государства — Советского Союза.</li>
+                        <li class="impact__list-item">Массовым человеческим жертвам, разрушению экономики и культуры.</li>
+                        <li class="impact__list-item">Перераспределению земли и национализации промышленности.</li>
+                        <li class="impact__list-item">Значительным изменениям в мировой политике и идеологии, формированию двухполярного мира.</li>
+                        <li class="impact__list-item">Массовой эмиграции населения и формированию русской диаспоры.</li>
+                        <li class="impact__list-item">Смене общественно-политической формации и установлению новой системы ценностей.</li>
+                    </ul>
+                    <p class="impact__text">Эти события оставили глубокий след в истории, вызвав десятилетия споров и исследований, и до сих пор остаются одной из самых обсуждаемых тем в мировой историографии.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section gallery">
+            <div class="section__container">
+                <h2 class="section__title gallery__title anim anim--slide-in-up">Фотогалерея Эпохи</h2>
+                <!-- Slider main container -->
+                <div class="gallery__swiper swiper-container anim anim--fade-in" data-anim-delay="0.1">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="images/petrog.jpg" alt="Демонстрация в Петрограде 1917"></div>
+                        <div class="swiper-slide"><img src="images/krasn.jpg" alt="Солдаты Красной Армии на фронте"></div>
+                        <div class="swiper-slide"><img src="images/vid.jpg" alt="Вид на город во время революции"></div>
+                        <div class="swiper-slide"><img src="images/plakat.jpg" alt="Советский агитационный плакат"></div>
+                        <div class="swiper-slide"><img src="images/mass.jpg" alt="Народные массы на митинге"></div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВЫЙ РАЗДЕЛ: Рекомендуемая литература (будет заполняться JS) -->
+        <section id="recommended-readings" class="section recommended-readings">
+            <div class="section__container">
+                <h2 class="section__title recommended-readings__title anim anim--slide-in-up">Рекомендуемая Литература</h2>
+                <div class="recommended-readings__grid">
+                    <!-- Здесь будут динамически добавлены книги из JSON -->
+                    <p class="recommended-readings__loading-message">Загрузка данных...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВЫЙ РАЗДЕЛ: Контакты (форма с LocalStorage) -->
+        <section id="contact" class="section contact">
+            <div class="section__container">
+                <h2 class="section__title contact__title anim anim--slide-in-up">Связаться с нами</h2>
+                <form class="contact__form anim anim--fade-in-up-big" data-anim-delay="0.1" id="contactForm">
+                    <div class="contact__form-group">
+                        <label for="contactName" class="contact__form-label">Ваше имя:</label>
+                        <input type="text" id="contactName" name="name" class="contact__form-input" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="contact__form-group">
+                        <label for="contactEmail" class="contact__form-label">Ваш Email:</label>
+                        <input type="email" id="contactEmail" name="email" class="contact__form-input" placeholder="Введите ваш Email" required>
+                    </div>
+                    <div class="contact__form-group">
+                        <label for="contactMessage" class="contact__form-label">Сообщение:</label>
+                        <textarea id="contactMessage" name="message" class="contact__form-textarea" rows="5" placeholder="Введите ваше сообщение" required></textarea>
+                    </div>
+                    <div class="contact__form-actions">
+                        <button type="submit" class="contact__form-button button">Отправить сообщение</button>
+                        <button type="button" class="contact__form-button contact__form-button--clear button" id="clearStorageButton">Очистить сохраненные данные</button>
+                    </div>
+                    <p class="contact__form-status" id="formStatusMessage"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="footer anim anim--fade-in" data-anim-delay="0.1">
+        <div class="footer__container">
+            <p class="footer__copy">&copy; 2025 Революция 1917 и Гражданская Война. Все права защищены.</p>
+            <ul class="footer__nav">
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link">Политика конфиденциальности</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link">Условия использования</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-top-button" aria-label="Прокрутить страницу вверх" title="Наверх">↑</button>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Ваш кастомный JS -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>

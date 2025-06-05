@@ -1,0 +1,61 @@
+/* Playfair Display */
+@font-face {
+    font-family: 'PlayfairDisplay-Local'; /* Произвольное имя для использования в CSS */
+    src: url('./fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+         url('./fonts/PlayfairDisplay-Regular.woff') format('woff'),
+         url('./fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay-Local';
+    src: url('./fonts/PlayfairDisplay-Medium.woff2') format('woff2'),
+         url('./fonts/PlayfairDisplay-Medium.woff') format('woff'),
+         url('./fonts/PlayfairDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay-Local';
+    src: url('./fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+         url('./fonts/PlayfairDisplay-Bold.woff') format('woff'),
+         url('./fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Roboto */
+@font-face {
+    font-family: 'Roboto-Local'; /* Произвольное имя для использования в CSS */
+    src: url('./fonts/Roboto-Light.woff2') format('woff2'),
+         url('./fonts/Roboto-Light.woff') format('woff'),
+         url('./fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Local';
+    src: url('./fonts/Roboto-Regular.woff2') format('woff2'),
+         url('./fonts/Roboto-Regular.woff') format('woff'),
+         url('./fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Local';
+    src: url('./fonts/Roboto-Bold.woff2') format('woff2'),
+         url('./fonts/Roboto-Bold.woff') format('woff'),
+         url('./fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,45 @@
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text-light);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.45));
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    padding: 30px;
+}
+
+.hero__title {
+    font-size: 5.5em;
+    margin-bottom: 30px;
+    color: var(--color-text-light);
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+    letter-spacing: -1px;
+}
+
+.hero__subtitle {
+    font-size: 1.8em;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
