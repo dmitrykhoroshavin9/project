@@ -1,0 +1,220 @@
+/* Базовые стили и сброс */
+:root {
+    /* Цвета */
+    --color-primary: #750000;       /* Глубокий, насыщенный красный */
+    --color-accent: #CC3333;        /* Более яркий красный для акцентов */
+    --color-background-light: #FDFCF6; /* Теплый, почти кремовый фон */
+    --color-background-dark: #1F2833; /* Темный, глубокий серый/синий для контраста */
+    --color-text-dark: #333333;     /* Темный текст */
+    --color-text-medium: #666666;   /* Средний серый текст */
+    --color-text-light: #FFFFFF;    /* Белый текст */
+    --color-line: #993333;          /* Цвет линии для хронологии */
+
+    /* Шрифты */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Размеры шрифтов */
+    --font-size-h1: 3.8em; /* Для hero__title */
+    --font-size-h2: 3.2em; /* Для section__title */
+    --font-size-h3: 1.8em; /* Для подзаголовков карточек/блоков */
+    --font-size-body: 1.1em; /* Для основного текста */
+    --font-size-small: 0.9em; /* Для мелкого текста/описаний */
+
+    /* Отступы и размеры */
+    --spacing-section-padding: 100px 0; /* Отступ для секций */
+    --spacing-container-padding: 0 25px; /* Горизонтальный отступ внутри контейнеров */
+
+    /* Тени */
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 12px 40px rgba(0, 0, 0, 0.25);
+    --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.08); /* Тень для карточек */
+    --shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.15); /* Тень при наведении */
+
+    /* Радиусы скругления */
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --border-radius-card: 10px; /* Радиус для карточек */
+    --border-radius-button: 8px; /* Радиус для кнопок */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* Общие стили для секций */
+.section {
+    padding: var(--spacing-section-padding); /* Используем переменную */
+    position: relative;
+    z-index: 1;
+}
+
+.section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-container-padding); /* Используем переменную */
+}
+
+.section__title {
+    font-size: var(--font-size-h2); /* Используем переменную */
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.section__title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: var(--color-accent);
+    margin: 28px auto 0;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Стили кнопки */
+.button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
+    color: var(--color-text-light);
+    padding: 16px 32px;
+    border-radius: var(--border-radius-button); /* Используем переменную */
+    transition: all 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    box-shadow: var(--shadow-medium);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease-out;
+    transform: skewX(-20deg);
+}
+
+.button:hover {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.button:hover::before {
+    left: 100%;
+}
+
+
+/* =============================================== */
+/* НОВЫЕ СТИЛИ для секции "Ключевые Понятия" */
+/* =============================================== */
+.key-concepts {
+    /* padding: var(--spacing-section-padding); -- уже установлено в .section */
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+}
+
+.key-concepts__title {
+    /* Стили уже наследуются от .section__title, но можно переопределить при необходимости */
+    /* text-align: center; */
+    /* margin-bottom: 40px; */
+    /* color: var(--color-primary); */
+    /* font-size: var(--font-size-h2); */
+    /* font-weight: 700; */
+}
+
+.key-concepts__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.key-concepts__item {
+    background-color: var(--color-background-card); /* Предполагается, что вы определите --color-background-card */
+    border-radius: var(--border-radius-card);
+    padding: 25px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--color-accent); /* Декоративная полоса */
+}
+
+.key-concepts__item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.key-concepts__item-title {
+    font-size: var(--font-size-h3);
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.key-concepts__item-description {
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+    color: var(--color-text-medium);
+}
+
+.key-concepts__loading-message {
+    text-align: center;
+    grid-column: 1 / -1; /* Занимает всю ширину грида */
+    color: var(--color-text-medium);
+    font-style: italic;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .key-concepts__list {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+    }
+}

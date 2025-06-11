@@ -1,4 +1,4 @@
-/**
+ /**
  * @file script.js
  * @description Основной JavaScript файл для интерактивности сайта.
  *              Содержит логику для мобильного меню, активной навигации,
@@ -356,7 +356,60 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('--- Конец заголовков хронологии ---\n');
 
     // ===============================================
-    // 8. Анимации при появлении в области видимости (Intersection Observer)
+    // 8. Демонстрация for...in для вывода ключевых понятий
+    // Алгоритм:
+    //  - Определяем объект с ключевыми понятиями и их определениями.
+    //  - Получаем DOM-элемент, куда будем вставлять информацию.
+    //  - Используем цикл for...in для итерации по свойствам объекта.
+    //  - Для каждого свойства создаем HTML-элемент (например, div или p)
+    //    и добавляем в него ключ и значение.
+    // ===============================================
+    const keyConceptsData = {
+        "Большевики": "Фракция Российской социал-демократической рабочей партии, возглавляемая В.И. Лениным, пришедшая к власти в Октябре 1917 года.",
+        "Белое движение": "Военно-политическое движение в России, сформированное в ходе Гражданской войны с целью свержения советской власти.",
+        "Временное правительство": "Высший исполнительно-распорядительный орган государственной власти в России между Февральской и Октябрьской революциями 1917 года.",
+        "РСФСР": "Российская Советская Федеративная Социалистическая Республика, первое социалистическое государство, образованное после Октябрьской революции.",
+        "Советы": "Органы власти, возникшие в России в начале 20 века, состоящие из депутатов от рабочих, крестьян и солдат.",
+        "Интервенция": "Вмешательство иностранных государств во внутренние дела России в период Гражданской войны (1918-1922)."
+    };
+
+    const keyConceptsList = document.querySelector('.key-concepts__list');
+    const keyConceptsLoadingMessage = keyConceptsList ? keyConceptsList.querySelector('.key-concepts__loading-message') : null;
+
+    if (keyConceptsList) {
+        if (keyConceptsLoadingMessage) {
+            keyConceptsLoadingMessage.remove(); // Удаляем сообщение о загрузке
+        }
+
+        let conceptIndex = 0; // Для индивидуальных задержек анимации
+        for (const conceptKey in keyConceptsData) {
+            // Убеждаемся, что свойство принадлежит самому объекту, а не унаследовано
+            if (Object.hasOwnProperty.call(keyConceptsData, conceptKey)) {
+                const conceptValue = keyConceptsData[conceptKey];
+
+                const conceptElement = document.createElement('div');
+                conceptElement.classList.add('key-concepts__item');
+                // Добавляем классы анимации для каждого элемента списка
+                conceptElement.classList.add('anim', 'anim--fade-in-up-big');
+                // Устанавливаем индивидуальную задержку для эффекта стаггера
+                conceptElement.style.setProperty('--anim-delay', `${0.1 + conceptIndex * 0.1}s`);
+
+                conceptElement.innerHTML = `
+                    <h3 class="key-concepts__item-title">${conceptKey}</h3>
+                    <p class="key-concepts__item-description">${conceptValue}</p>
+                `;
+                keyConceptsList.appendChild(conceptElement);
+                conceptIndex++;
+            }
+        }
+        console.log('Ключевые понятия загружены с использованием for...in.');
+        // Переинициализируем наблюдатель после добавления новых элементов
+        initializeAnimationObserver();
+    }
+
+
+    // ===============================================
+    // 9. Анимации при появлении в области видимости (Intersection Observer)
     // Алгоритм:
     //  - Находим все элементы с классом 'anim'.
     //  - Создаем IntersectionObserver.
